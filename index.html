@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MARIO</title>
+<script>
+
+
+var x = 200;
+
+var y =100;
+
+var inc = 10;
+
+function Init()
+{
+   document.getElementById('img1').style.left = x + 'px';
+   document.getElementById('img1').style.top = y + 'px';
+}
+function moveRight()
+{
+   x += inc;
+
+   document.getElementById('img1').style.left = x + 'px';
+}
+
+function moveLeft()
+{
+   x -= inc;
+
+   document.getElementById('img1').style.left = x + 'px';
+}
+
+function moveUp()
+{
+   y -= inc;
+
+   document.getElementById('img1').style.top = y + 'px';
+}
+
+function moveDown()
+{
+   y += inc;
+
+   document.getElementById('img1').style.top = y + 'px';
+}
+</script>
+
+
+<style>
+#box
+{
+   width: 500px;
+   height: 300px;
+   position: relative;
+   margin: 20px auto 0px auto;
+   
+   overflow: hidden;
+}
+
+.image
+{
+   position: absolute;
+   z-index: 100;
+}
+</style>
+</head>
+
+<body onload="javascript:Init()">
+<div id="box"><img class="image" id="img1" src="mario.jpg"/></div>
+
+<marquee><input type="button" value="right" onclick="moveRight();" />
+<input type="button" value="left" onclick="moveLeft();" /></br></br>
+<input type="button" value="Up" onclick="moveUp();" />
+<input type="button" value="Down" onclick="moveDown();" /></marquee>
+
+</body>
+</html>
